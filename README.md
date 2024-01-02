@@ -41,7 +41,7 @@ const mappaRegole = {
 // Oggetto per le validazioni
 const validatore = new Validator(mappaRegole)
 
-/*c
+/*
  * Risultati di validazione:
  *  - checkErrore sarà true se ci sono errori
  *  - errori sarà un oggetto contenente per ogni chiave l'array degli errori
