@@ -135,3 +135,9 @@ Di seguito una tabella con la lista dei validatori una descrizione e un riepilog
  - H: ore nel formato 2 cifre da 00 a 23
  - i: minuti nel formato 2 cifre da 00 a 59
  - s: secondi nel formato 2 cifre da 00 a 59
+
+## Creazione di assert custom
+Per creare un assert custom è sufficiente **estendere la classe** `Assert` e seguire alcune regole di base:
+ 1. sovrascrivere la proprietà `_message` con l'errore che si vuole mostrare in caso di fallimento
+ 1. se necessario modificare il metodo `constructor` richiamando comunque sempre il costruttore di `Assert` passandogli almeno message e output (per alcuni assert value non è necessario, in questi casi passate `undefined` al costruttore di Assert)
+ 1. Nel metodo `resolve` modificare semplicemente `this._error` in base alle proprie esigenze e restituire il risultato del metodo `resolve` di `Assert` (es. `return super.resolve(value)`) per mostrare l'errore e rispettare l'interfaccia di comunicazione con altri assert.
