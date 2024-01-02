@@ -1,4 +1,4 @@
-import Assert from "./Assert/Assert"
+import Assert from "./Asserts/Assert"
 
 export default class Validator{
     /**
